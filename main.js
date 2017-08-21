@@ -1,18 +1,14 @@
-function LivingBeing(name) {
-  this.name = name;
-}
-
 // Dog Constructor & Prototype
-function Dog (status, color, hungry, owner) {
+function Dog (name, status, color, hungry, owner) {
   // this.name = name;
   this.status = status || 'normal';
   this.color = color;
-  this.hungry = hungry;
+  this.hungry = hungry || false;;
   this.owner = owner;
 }
 
 // Human Constructor & Prototype
-function Human (cool) {
+function Human (name, cool) {
   // this.name = name;
   this.pet = function(dog) {
     dog.status = 'happy';
@@ -25,16 +21,13 @@ function Human (cool) {
 
 // ============================================
 
-let sadie = new Dog('normal', 'black', false);
-sadie.prototype = new LivingBeing('Sadie');
-let moonshine = new Dog('normal', 'blue', true);
-moonshine.prototype = new LivingBeing('Moonshine');
-let atticus = new Dog()
-atticus.prototype = new LivingBeing('Atticus');
+let sadie = new Dog('Sadie', 'normal', 'black');
+let moonshine = new Dog('Moonshine', 'normal', 'blue', true);
+let atticus = new Dog('Atticus')
 
-let mason = new Human(false);
-mason.prototype = new LivingBeing('Mason');
-let julia = new Human(true);
-julia.prototype = new LivingBeing('Julia')
+let mason = new Human('Mason', false);
+let julia = new Human('Julia', true);
 
 sadie.owner = mason;
+
+// julia.feed(moonshine);

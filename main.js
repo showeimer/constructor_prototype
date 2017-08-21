@@ -3,7 +3,7 @@ function Dog (name, status, color, hungry, owner) {
   this.name = name;
   this.status = status || 'normal';
   this.color = color;
-  this.hungry = hungry || false;;
+  this.hungry = hungry || false;
   this.owner = owner;
 }
 
@@ -12,10 +12,10 @@ function Human (name, cool) {
   this.name = name;
   this.pet = function(dog) {
     dog.status = 'happy';
-  }
+  };
   this.feed = function(dog) {
     dog.hungry = false;
-  }
+  };
   this.cool = cool || false;
 }
 
